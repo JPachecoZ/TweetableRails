@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   # Associations
 
-    has_many :tweets
-    has_many :comments, as: :commentable
+    has_many :tweets, dependent: :destroy
+    has_many :comments, dependent: :destroy
 
     has_one_attached :avatar
     

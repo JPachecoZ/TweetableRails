@@ -5,7 +5,7 @@ class Tweet < ApplicationRecord
 
   # Associations
 
-  belongs_to :user, dependent: :destroy
-  has_many :comments, as: :commentable
+  belongs_to :user
+  has_many :comments, dependent: :destroy
   
 end
