@@ -1,12 +1,11 @@
 class Tweet < ApplicationRecord
   # Validations
 
-  validates :body, presence: true, limit: 140
-  validates :comments_count, default: 0
+  validates :body, presence: true, length: { maximum: 140 }
 
   # Associations
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :comments, as: :commentable
   
 end
