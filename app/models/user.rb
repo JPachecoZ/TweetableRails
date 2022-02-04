@@ -15,5 +15,10 @@ class User < ApplicationRecord
 
     has_many :tweets
     has_many :comments, as: :commentable
+
+    has_one_attached :avatar
     
+    def avatar_attachment_path
+      avatar.attached? ? avatar : 'default.png'
+    end
 end
