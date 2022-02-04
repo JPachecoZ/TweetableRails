@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import url("./global.css");
+@import url("./components/button.css");
+@import url("./components/input.css");
+@import url("./components/header.css");
+@import url("./components/footer.css");
+
+a {
+  /* color: var(--primary-500); */
+  color: var(--gray-300);
+  text-decoration: none;
+}

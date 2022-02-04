@@ -10,9 +10,32 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body></body>
+    <header class="header">
+      <div class="container"></div>
+        <div class="navbar">
+          <nav>
+
+            <ul class="navbar-links gap-4" role="list">
+              <%if user_signed_in?%>
+                <li><%=link_to "Edit Profile", edit_user_registration_path, class: "primary-color"%></li>
+                <li>
+                    <%=button_to "Log Out", destroy_user_session_path, method: :delete, data: { turbo: "false" }, class: "button button--primary"%>
+                </li>
+              <%else%>
+                <li><%=link_to "Log in", new_user_session_path, class: "button button--primary"%></li>
+              <%end%>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <main class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

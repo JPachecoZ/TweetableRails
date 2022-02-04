@@ -4,7 +4,8 @@ class Comment < ApplicationRecord
   validates :body, presence: true, length: { maximum: 140 }
 
   # Associations
-  belongs_to :tweets, dependent: :destroy, counter_cache: true
-  belongs_to :users, dependent: :destroy
+  
+  belongs_to :tweets, counter_cache: true
+  belongs_to :users
   
 end

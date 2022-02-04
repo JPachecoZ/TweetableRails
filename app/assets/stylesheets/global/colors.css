@@ -1,0 +1,30 @@
+:root {
+  --primary: #1da1f2;
+  --primary-hover: #1b95e0;
+  --background: #f7f9fa;
+  --secondary: #5b7083;
+
+  --secondary-100: #a8a8a8;
+  --secondary-200: #8f8f8f;
+  --secondary-300: #757575;
+  --secondary-400: #5c5c5c;
+  --secondary-500: #424242;
+  --secondary-600: #292929;
+  --error-100: #ea6c83;
+  --error-200: #e54865;
+  --error-300: #e02447;
+  --error-400: #c51c3b;
+  --error-500: #a11730;
+
+  --shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --shadow-input-primary: 0px 0px 4px var(--primary-300);
+  --shadow-input-error: 0px 0px 4px var(--error-500);
+}

@@ -1,12 +1,17 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>Body:</strong>
-    <%= tweet.body %>
-  </p>
-
-  <p>
-    <strong>Comments count:</strong>
-    <%= tweet.comments_count %>
-  </p>
-
+<div class="gap-2 twt__container flex">
+  <div class="tweet-img">
+  <%=image_tag tweet.user.avatar_attachment_path, class:"tweet-img"%>
+  </div>
+  <div>
+    <div class="flex gap-2">
+      <strong><%= tweet.user.name%></strong>
+      <div class="gray-200">@<%= tweet.user.username%></div>
+      <div class="gray-200"><%= time_ago_in_words(tweet.created_at)%></div>
+    </div>
+    <%= link_to tweet.body, tweet %>
+    <div class="flex gap-2">
+      <%=image_tag('icons/Comment.svg') %>
+      <p><%= tweet.comments_count %></p>
+    </div>
+  </div>
 </div>
