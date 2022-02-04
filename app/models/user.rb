@@ -4,5 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
+  # Validations
+    validates :email, null: false, uniqueness: true
+    validates :username, null: false, uniqueness: true
+    validates :name, null: false
+    validates :password, length: { minimum: 6 }
+  # Associations
 end
