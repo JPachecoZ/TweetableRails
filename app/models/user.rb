@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   # Validations
 
-    validates :email, null: false, uniqueness: true
-    validates :username, null: false, uniqueness: true
-    validates :name, null: false
+    validates :email, presence: true, uniqueness: true
+    validates :username, presence: true, uniqueness: true
+    validates :name, presence: true
     validates :password, length: { minimum: 6 }
 
   # Associations
