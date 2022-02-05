@@ -1,4 +1,4 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
 
   # GET /comments/1
@@ -17,9 +17,10 @@ class CommentController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
 
     if @comment.save
-      redirect_to @comment, notice: "comment was successfully created."
+      redirect_to @comment.tweet, notice: "comment was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,6 +49,6 @@ class CommentController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :tweet_id)
     end
 end

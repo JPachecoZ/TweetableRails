@@ -21,6 +21,8 @@
     <%= form.text_area :body, class: "input_text_content", placeholder: "Remember to thing before write..." %>
   </div>
 
+  <%= form.hidden_field :tweet_id, value: tweet.id %>
+  
   <div class="flex-end">
     <%= form.submit "Comment", class:"button button--secondary"%>
   </div>
