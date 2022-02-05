@@ -1,0 +1,16 @@
+<div class="gap-2 twt__container flex">
+  <div class="tweet-img">
+  <%=image_tag comment.user.avatar_attachment_path, class:"tweet-img"%>
+  </div>
+  <div>
+    <div class="flex gap-2">
+      <strong><%= comment.user.name%></strong>
+      <div class="gray-200">@<%= comment.user.username%></div>
+      <div class="gray-200"><%= time_ago_in_words(comment.created_at)%></div>
+    </div>
+    <%= link_to comment.body, comment %>
+    <div class="flex gap-2">
+      <%=image_tag('icons/Comment.svg') %>
+    </div>
+  </div>
+</div>

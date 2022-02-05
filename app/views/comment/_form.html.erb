@@ -4,13 +4,13 @@
   <div class="tweet-img">
   <%=image_tag current_user.avatar_attachment_path, class:"tweet-img" %>
   </div>
-  <%= form_with model: tweet, class: "full-width" do |form| %>
-  <% if tweet.errors.any? %>
+  <%= form_with model: comment, class: "full-width" do |form| %>
+  <% if comment.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this tweet from being saved:</h2>
 
       <ul>
-        <% tweet.errors.each do |error| %>
+        <% comment.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="flex-end">
-    <%= form.submit "Tweet", class:"button button--secondary"%>
+    <%= form.submit "Comment", class:"button button--secondary"%>
   </div>
   <% end %>
 </div>

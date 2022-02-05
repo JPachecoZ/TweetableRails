@@ -41,11 +41,11 @@
 }
 
 .button--secondary:hover {
-  background-color: var(--secondary-400);
+  background-color: var(--primary-hover);
 }
 
 .button--secondary:focus {
-  outline: 2px solid var(--secondary-300);
+  outline: 2px solid var(--primary-hover);
   outline-offset: 2px;
 }
 

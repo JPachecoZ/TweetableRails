@@ -11,6 +11,21 @@
   height: 1.5em;
 }
 
+textarea {
+  border: none;
+  background-color: transparent;
+  border-width: 1px;
+  border-color: #5b7083;
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+  border-radius: 8px;
+  height: 40px;
+  resize: none;
+  outline: none;
+}
+
 .input__container,
 .select__input {
   border: 1px solid var(--gray-200);

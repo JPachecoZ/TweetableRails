@@ -1,6 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
+<h1 class="heading text-center mb-4">Tuit Detail</h1>
+
 <%= render @tweet %>
+
+<%= render "comment/form", comment: @comment, tweet: @tweet, user: current_user if user_signed_in?%>
+
+<% unless @comments %>
+  <% @comments.each do |comment|%>
+    <%= render "comment/comment", comment: comment %>
+  <% end %>
+<% end %>
 
 <div>
   <%= link_to "Edit this tweet", edit_tweet_path(@tweet) %> |
@@ -8,3 +18,8 @@
 
   <%= button_to "Destroy this tweet", @tweet, method: :delete %>
 </div>
+
+
+
+
+
