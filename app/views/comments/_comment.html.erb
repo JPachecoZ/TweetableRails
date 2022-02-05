@@ -2,15 +2,20 @@
   <div class="tweet-img">
   <%=image_tag comment.user.avatar_attachment_path, class:"tweet-img"%>
   </div>
-  <div>
+  <div class="full-width">
     <div class="flex gap-2">
       <strong><%= comment.user.name%></strong>
       <div class="gray-200">@<%= comment.user.username%></div>
       <div class="gray-200"><%= time_ago_in_words(comment.created_at)%></div>
     </div>
     <%= link_to comment.body, comment %>
-    <div class="flex gap-2">
-      <%=image_tag('icons/Comment.svg') %>
+    <div class="article-card__header">
+      <div class="flex gap-2">
+      </div>
+      <div class="flex gap-2">
+        <%=button_to image_tag('icons/trash.svg'), comment, method: :delete, data: { turbo: "false" }, class:"button--subtle" if comment.user == current_user%>
+        <%=link_to image_tag('icons/pencil.svg'), edit_comment_path(comment) if comment.user == current_user%>
+      </div>
     </div>
   </div>
 </div>

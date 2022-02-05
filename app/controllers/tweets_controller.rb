@@ -3,14 +3,14 @@ class TweetsController < ApplicationController
 
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(created_at: :desc)
     @tweet = Tweet.new
   end
 
   # GET /tweets/1
   def show
     @comment = Comment.new
-    @comments=@tweet.comments
+    @comments=@tweet.comments.order(created_at: :desc)
   end
 
   # GET /tweets/new
@@ -46,7 +46,7 @@ class TweetsController < ApplicationController
   # DELETE /tweets/1
   def destroy
     @tweet.destroy
-    redirect_to tweets_url, notice: "Tweet was successfully destroyed."
+    redirect_to "/", notice: "Tweet was successfully destroyed."
   end
 
   private

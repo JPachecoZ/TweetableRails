@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @tweet = @comment.tweet
   end
 
   # POST /comments
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: "Comment was successfully updated."
+      redirect_to @comment.tweet, notice: "Comment was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +39,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy
-    redirect_to comments_url, notice: "Comment was successfully destroyed."
+    redirect_to @comment.tweet, notice: "Comment was successfully destroyed."
   end
 
   private

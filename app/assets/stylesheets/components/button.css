@@ -51,17 +51,21 @@
 
 /* Button Subtle */
 .button--subtle {
-  background-color: var(--gray-100);
-  color: var(--gray-400);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .button--subtle:hover {
-  background-color: var(--gray-200);
+  background: none;
+  border: none;
+  outline: none;
 }
 
 .button--subtle:focus {
-  outline: 2px solid var(--gray-100);
-  outline-offset: 2px;
+  outline: none;
+  outline-offset: none;
 }
 
 /* Anchor as button */
